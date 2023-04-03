@@ -1,0 +1,387 @@
+.header {
+  font-family: $fontFamily;
+  margin-bottom: 129px;
+  &__top {
+    width: 100%;
+    height: 800px;
+    background: url(../img/header/background.png) center/cover no-repeat;
+    @include flex-column-center;
+  }
+  &__navbar {
+    max-width: 1200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navbar {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $lightPurple;
+    &-icon {
+      width: 43px;
+      height: 41px;
+      fill: currentColor;
+    }
+  }
+  &__logo:hover {
+    color: $white;
+  }
+
+  &__nav-and-btn{
+    @include flex-center;
+  }
+  &__nav {
+    &-list {
+      margin: 40px 38px 40px 0px;
+      width: 527px;
+      display: flex;
+      gap: 48px;
+      cursor: pointer;
+    }
+    &-item a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 17px;
+      color: $lightPurple;
+    }
+    &-item a:hover {
+      color:$white;
+    }
+  }
+
+  &__btn {
+    width: 145px;
+    height: 37px;
+    background-color: $lightPurple;
+    border-radius: 40px;
+    @include flex-center;
+    cursor: pointer;
+  }
+  &__btn a {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17px;
+    color: $white;
+  }
+  &__btn:hover {
+    background-color: $white;
+    border: 1px $lightPurple solid;
+  }
+  &__btn:hover a {
+    color: $lightPurple;
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+
+.navbar__nav.visible {
+  display: block;
+  -webkit-animation: slide-down 0.5s ease-out;
+}
+
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+.navbar__burger.active {
+  &::before {
+    transform: translateX(15px);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  & span {
+    transform: rotate(45deg);
+  }
+}
+
+.title {
+  @include flex-column-center;
+  gap: 19px;
+  margin: 83px 11px 0;
+  text-align: center;
+
+  & h1 {
+    font-weight: 700;
+    font-size: 82px;
+    line-height: 82px;
+    color: $white;
+  }
+  & h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: $lightPurple;
+  }
+  & h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #848e97;
+  }
+}
+
+.header__bottom {
+  position: absolute;
+  width: 100%;
+  &-block {
+    position: relative;
+    top: -32px;
+    @include flex-column-center;
+    gap: 19px;
+  }
+  &-btn {
+    width: 390px;
+    height: 62px;
+    background-color: $lightPurple;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  &-btn a {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 22px;
+    color: $white;
+  }
+
+  &-btn:hover {
+    background-color: $white;
+    border: 2px $lightPurple solid;
+  }
+  &-btn:hover a {
+    color: $lightPurple;
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #848e97;
+  }
+}
+
+//Media 481-992px
+@media (max-width: ($md1+px)) {
+  .header{
+    margin-bottom: 159px;
+  }
+  .navbar {
+    height: 118px;
+    padding: 0 10px;
+    width: 100%;
+    background-color: #27262a;
+    display: flex;
+    justify-content: space-between;
+
+    &__nav {
+      position: absolute;
+      top: 83px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      &-list {
+        width: auto;
+        margin: 0 auto;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+      }
+      &-item a {
+        line-height: 18px;
+      }
+      &__btn {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+  .title {
+    margin-top: 69px;
+    & h1 {
+      font-size: 72px;
+      line-height: 72px;
+    }
+    & h2 {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    & h3 {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+  .header__bottom {
+    &-btn a {
+      line-height: 23px;
+    }
+    &-text {
+      line-height: 16px;
+    }
+  }
+}
+
+//Media 320-480pxpx
+@media (max-width: ($md2+px)) {
+  .header{
+    margin-bottom: 122px;
+    &__top {
+    height: 718px;
+  }
+
+  }
+  
+  .navbar__logo-text {
+    display: none;
+  }
+
+  .navbar {
+    height: 103px;
+    padding: 0 10px;
+    margin: 0;
+    &__nav {
+      display: none;
+      width: 293px;
+      height: 379px;
+      top: 103px;
+      background-color: #333333;
+      transition: all 1s linear;
+      &-list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      &-item {
+        position: relative;
+        height: 90px;
+        border: #3b3b3b solid;
+        border-style: none none solid none;
+      }
+      &-list a {
+        width: 100%;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+        padding: 0 0 0 36px;
+        color: $white;
+        &::before {
+          content: "";
+          width: 8px;
+          height: 54px;
+          background-color: $lightPurple;
+          position: absolute;
+          top: 17px;
+          left: 2px;
+          transform: scale(0);
+          transition: all 0.3s ease;
+        }
+        &:active::before {
+          transform: scale(0.9);
+        }
+        &:active {
+          color: $lightPurple;
+        }
+      }
+    }
+    &__burger {
+      display: block;
+      position: relative;
+      width: 26px;
+      height: 22px;
+      cursor: pointer;
+      overflow: hidden;
+
+      &::before,
+      &::after,
+      & span {
+        content: "";
+        background-color: $white;
+        position: absolute;
+        width: 26px;
+        height: 3px;
+        border-radius: 5px;
+        transition: all 0.4s ease-out;
+      }
+
+      &::before {
+        width: 15px;
+        top: 1px;
+        right: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        top: 10px;
+      }
+    }
+  }
+  .title {
+    margin-top: 49px;
+    & h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    & h2 {
+      font-size: 18px;
+      line-height: 24px;
+      text-transform: capitalize;
+    }
+    & h3 {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+  .header__bottom {
+    &-block {
+      top: -23px;
+      gap: 12.5px;
+    }
+    &-btn {
+      width: 290px;
+      height: 45px;
+    }
+    &-btn a {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    &-text {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+}

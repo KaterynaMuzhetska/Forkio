@@ -1,0 +1,29 @@
+// Fonts settings:
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
+$fontFamily: 'Montserrat', sans-serif;
+$fontFamilyLato: 'Lato', sans-serif;
+
+$minWith: 320;
+$maxWith: 1200;
+$md1: 991.99;
+$md2: 479.99;
+$md3: 319.99;
+
+$lightPurple: #8d81ac;
+$white: #fff;
+
+//Basic styles
+
+
+
+//Basic styles
+
+//Files import
+@import "mixins";
+@import "null";
+@import "header";
+@import "testimonials";
+@import "editor";
+@import "here";
+@import "price";
